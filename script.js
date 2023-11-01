@@ -15,15 +15,16 @@ function addDegreeInput() {
     const degreeInput = document.createElement("input");
     degreeInput.type = "text";
     degreeInput.placeholder = "Degree";
+    degreeInput.name = "degree[]"; // Use the same name to create an array
     degreeInput.required = true;
-    document.querySelector(".doctor-form").insertBefore(degreeInput, document.querySelector(".add-degree"));
+    document.querySelector("#degree-inputs").appendChild(degreeInput);
 }
 
 // Event listener for "Add Another Degree" button
-document.querySelector(".add-degree").addEventListener("click", addDegreeInput);
+document.querySelector("#add-degree").addEventListener("click", addDegreeInput);
 
 // Event listener for form submission
-document.querySelector(".doctor-form").addEventListener("submit", function (e) {
+document.querySelector("#doctor-form").addEventListener("submit", function (e) {
     e.preventDefault();
 
     const name = document.querySelector("input[name='name']").value;
@@ -31,7 +32,8 @@ document.querySelector(".doctor-form").addEventListener("submit", function (e) {
     const password = document.querySelector("input[name='password']").value;
     const confirmPassword = document.querySelector("input[name='cfmpassword']").value;
     const graduationDate = document.querySelector("input[name='date']").value;
-    const degrees = [...document.querySelectorAll("input[type='text'][placeholder='Degree']")].map(input => input.value);
+    const degreeInputs = document.querySelectorAll("input[type='text'][placeholder='Degree']");
+    const degrees = Array.from(degreeInputs).map(input => input.value);
     const consultationFee = document.querySelector("input[name='cofee']").value;
 
     // Validate input fields, including password matching

@@ -11,7 +11,7 @@
     
     <div id="registration-form">
         <!-- Registration Form Here -->
-        <form action="process_form.php" method="post" class="doctor-form">
+        <form action="process_form.php" method="post"  class="doctor-form">
             <input type="text" name="name" placeholder="Full Name" required>
             <input type="email" name="email" placeholder="Email" required>
             <!-- Inside the form -->
@@ -22,8 +22,9 @@
 <input type="password" name="cfmpassword" id="confirm-password" placeholder="Confirm Password" minlength="8" required>
             <label for="graduation-date">Date of Graduation</label>
             <input type="date" name="date" required>
-            <input type="text" name="degree[]" placeholder="Degree" required>
-            <input type="text" name="cofee" placeholder="Consultation Fee (in Rupees)" required>
+            <div id="degree-inputs">
+                <input type="text" name="degree[]" placeholder="Degree" required>
+            </div>            <input type="text" name="cofee" placeholder="Consultation Fee (in Rupees)" required>
             <button type="button" class="add-degree" id="add-degree">Add Another Degree</button>
             <button type="submit" name="Register">Register</button>
         </form>

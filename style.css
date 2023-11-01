@@ -98,6 +98,63 @@ label {
     height: 24px;
 }
  
+/*-----Home button-------------*/
+
+/* Styles for Violet section */
+.violet-section {
+    background-color: violet;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.violet-section img {
+    max-width: 100%;
+}
+
+.register-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Styles for Green section */
+.green-section {
+    background-color: green;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.login-button {
+    background-color: white;
+    color: green;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
+/* Styles for White section */
+.white-section {
+    background-color: white;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.view-doctors-button {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+}
+
 
 
 

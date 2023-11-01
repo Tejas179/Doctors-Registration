@@ -14,7 +14,6 @@ if ($mysqli->connect_error) {
 }
 
 // Process the form data
-// Process the form data
 if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password']) && isset($_POST['cfmpassword']) && isset($_POST['date']) && isset($_POST['degree']) && isset($_POST['cofee'])) {
     $name = $_POST['name'];
     $email = $_POST['email'];
@@ -22,7 +21,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
     $cfmpassword = $_POST['cfmpassword'];
     $date = $_POST['date'];
     $degrees = implode(', ', $_POST['degree']); // Combine multiple degrees with a comma
-    $cofeem = $_POST['cofee'];
+    $cofee = $_POST['cofee']; // Fix the variable name
 
     // Check if the passwords match
     if ($_POST['password'] === $_POST['cfmpassword']) {
@@ -30,7 +29,7 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
         $query = "INSERT INTO doc (name, email, password, cfmpassword, date, degree, cofee) VALUES (?, ?, ?, ?, ?, ?, ?)";
 
         $stmt = $mysqli->prepare($query);
-        $stmt->bind_param("sssssss", $name, $email, $password, $cfmpassword, $date, $degrees, $cofeem);
+        $stmt->bind_param("sssssss", $name, $email, $password, $cfmpassword, $date, $degrees, $cofee);
 
         if ($stmt->execute()) {
             echo "Registration successful!";
@@ -43,7 +42,6 @@ if (isset($_POST['name']) && isset($_POST['email']) && isset($_POST['password'])
         echo "Error: Password and Confirm Password do not match.";
     }
 }
-
 
 $mysqli->close();
 ?>
