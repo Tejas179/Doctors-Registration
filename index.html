@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Doctor Registration</title>
+</head>
+<body>
+    <h1>Doctor Registration</h1>
+    
+    <div id="registration-form">
+        <!-- Registration Form Here -->
+        <form action="process_form.php" method="post" class="doctor-form">
+            <input type="text" name="name" placeholder="Full Name" required>
+            <input type="email" name="email" placeholder="Email" required>
+            <!-- Inside the form -->
+<div class="password-field">
+    <input type="password" name="password" id="password" placeholder="Password (min 8 characters, 1 special character, 1 digit)" minlength="8" required>
+    <img id="password-toggle" src="Assets/passwordShow.png" alt="Show Password" onclick="togglePasswordVisibility()">
+</div>
+<input type="password" name="cfmpassword" id="confirm-password" placeholder="Confirm Password" minlength="8" required>
+            <label for="graduation-date">Date of Graduation</label>
+            <input type="date" name="date" required>
+            <input type="text" name="degree[]" placeholder="Degree" required>
+            <input type="text" name="cofee" placeholder="Consultation Fee (in Rupees)" required>
+            <button type="button" class="add-degree" id="add-degree">Add Another Degree</button>
+            <button type="submit" name="Register">Register</button>
+        </form>
+        
+        
+        
+    </div>
+
+    <div id="doctors-list">
+        <!-- Doctor Cards Here -->
+        <button type="button" id="load-more" onclick="location.href='view_doctors.html'">view doctors</button>
+        
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,104 @@
+body {
+    font-family: 'Poppins', Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    color: #333;
+}
+
+#registration-form, #doctors-list {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background: #f9f9f9;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#add-degree {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+button[type="submit"], #load-more {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 10px 0;
+    cursor: pointer;
+}
+
+button[type="submit"]:hover, #load-more:hover, #add-degree:hover {
+    background-color: #45a049;
+}
+
+label {
+    display: block;
+    text-align: left;
+    margin: 5px 0;
+    font-weight: bold;
+}
+
+#doctors-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.doctor-card {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 10px;
+    max-width: 300px;
+    background: #fff;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+}
+
+/* Password Toggle */
+.password-field {
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+}
+
+#password {
+    flex-grow: 1;
+    border: none; /* Remove the border from the password input */
+    padding: 10px;
+}
+
+#password-toggle {
+    cursor: pointer;
+    padding: 10px;
+    width: 24px; /* Adjust the width and height as needed */
+    height: 24px;
+}
+ 
+
+
+
+

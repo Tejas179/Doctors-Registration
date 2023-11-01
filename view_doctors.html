@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Doctors</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1>View Doctors</h1>
+    <div id="doctors-list">
+        <!-- Doctor Cards Will Be Displayed Here -->
+    </div>
+    <button type="button" id="load-more">Load More</button>
+
+    <script>
+        let page = 1;
+
+        // Function to fetch doctors from the API
+        function fetchDoctors() {
+            fetch(`fetch_doctors.php?page=${page}`) // Pass the page number
+                .then((response) => response.json())
+                .then((data) => {
+                    const doctorsList = document.getElementById("doctors-list");
+
+                    if (data && data.length > 0) {
+                        data.forEach((doctor) => {
+                            const card = document.createElement("div");
+                            card.className = "doctor-card";
+                            const degrees = doctor.degree.split(',').map(degree => degree.trim()).join(', ');
+                            card.innerHTML = `
+                                <h2>${doctor.name}</h2>
+                                <p>Email: ${doctor.email}</p>
+                                <p>Degree: ${degrees}</p>
+                                <p>Date of Graduation: ${doctor.date}</p>
+                                <p>Consultation Fee: ₹${doctor.cofee}</p>
+                            `;
+                            doctorsList.appendChild(card);
+                        });
+                        page++; // Increment the page number
+                    } else {
+                        document.getElementById("load-more").style.display = "none"; // Hide the button when there are no more results
+                    }
+                })
+                .catch((error) => {
+                    console.error('Error:', error);
+                });
+        }
+
+        // Event listener for "Load More" button
+        document.getElementById("load-more").addEventListener("click", fetchDoctors);
+
+        // Initial load of doctor cards
+        fetchDoctors();
+    </script>
+</body>
+</html>
